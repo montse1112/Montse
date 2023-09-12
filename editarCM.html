@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="styles.css">
+    <title>Editar Usuarios</title>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Gobos DecoH</h1>
+    </header>
+
+    <nav class="barra">
+        <ul>
+            <center><li><a href="inicioAdm.html">Inicio</a></li></center>
+        </ul>
+    </nav>
+
+    <br>
+        
+    <article class="boxRegistro">
+        <form action="php_login/insertar.php" method="POST" class="formulario_login">
+    
+            <br>
+            <p class="t2 azulP">Buscar cortina metalica por ID</p>
+            <p class="parrafo">ID</p>
+            <input type="text" placeholder="ID" name="id">
+    
+            <br>
+            <br>
+            <input type="submit" name="buscarCM" value="Buscar cortina metalica">
+        </form>
+  
+        </article>
+        <br>
+
+        <table>
+            <tr>
+               <th>Marca</th>
+               <th>Color</th>
+               <th>Precio</th>
+               <th>Distribuidor</th>
+               <th>Imagen</th>
+            </tr>
+   
+            <tr>
+               <td></td>
+
+               <td></td>
+
+               <td></td>
+
+               <td></td>
+
+                <td></td>
+            </tr>
+       </table>
+
+       <br>
+
+    <footer>
+        <section>
+            <a href="#titulo">Ir a inicio</a>
+            <br>
+            <a href="mailto:montserrat@gmail.com">montserrat@gmail.com</a>
+          </section>
+            <p>Todos los derechos reservados</p>
+            <p>Alejandra Montserrat Huato Medina</p>
+            <a href="tel:+523335057716">¡Llamanos!</a>
+    </footer>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="styles.css">
+    <title>Editar Usuarios</title>
+
+</head>
+<body>
+
+<article class="boxRegistro">
+
+<?php
+        $consulta=$_POST["buscarCM"];
+
+        $mipag=$_SERVER["PHP_SELF"];
+
+    ?>
+        <form action='". $mipag . "' method="POST" class="formulario_login">
+    
+            <br>
+            <p class="t2 azulP">Buscar cortina metalica por ID</p>
+            <p class="parrafo">ID</p>
+            <input type="text" placeholder="ID" name="id">
+    
+            <br>
+            <br>
+            <input type="submit" name="buscarCM" value="Buscar cortina metalica">
+        </form>
+  
+        </article>
+        <br>
+
+<?php
+
+include ("conexion.php");
+$getmysql = new mysqlconex();
+
+$getconex = $getmysql -> conex();
+
+$consulta=$_POST["buscarCM"];
+
+if(isset ($consulta)){
+
+    $id=$_POST["id"];
+
+    $query1=mysqli_query($getconex, "SELECT id_distribuidor, marca, color, precio, stock, url_img FROM cortinas_metalicas WHERE id ='$id'");
+    $nr=mysqli_num_rows($query1);    
+
+
+    if($nr==1){ 
+
+        while ( $row = $query1->fetch_assoc() ) {
+
+            $distribuidor=$row['id_distribuidor'];
+            $marca=$row['marca'];
+            $color=$row['color'];
+            $precio=$row['precio'];
+            $stock=$row['stock']; 
+            $url_img=$row['url_img']; 
+            ?>
+        
+        <table>
+            <tr>
+               <th>Marca</th>
+               <th>Color</th>
+               <th>Precio</th>
+               <th>Distribuidor</th>
+               <th>Imagen</th>
+            </tr>
+   
+            <tr>
+               <td><?php $distribuidor ?></td>
+
+               <td></td>
+
+               <td></td>
+
+               <td></td>
+
+                <td></td>
+            </tr>
+       </table>
+        
+       <?php } ?>
+    <?php } ?>
+<?php } ?>
+
+</body>
+</html>
+

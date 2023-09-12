@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="styles.css">
+    <title>Agregar cortinas metalicas</title>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Gobos DecoH</h1>
+    </header>
+
+    <nav class="barra">
+        <ul>
+            <center><li><a href="inicioAdm.html">Inicio</a></li></center>
+        </ul>
+    </nav>
+
+    <br>
+        
+    <article class="boxRegistro">
+        <form action="php/insertarCM.php" method="POST" class="formulario_CM" enctype="multipart/form-data">
+    
+            <br>
+            <p class="t2 azulP">Agregar nueva cortina metalica</p>
+            <p class="parrafo">Marca</p>
+            <select name="marca">
+
+                <option value="sensacional">sensacional</option>
+                
+                <option value="balloons">balloons</option>
+                
+                <option value="serpentex">serpentex</option>
+                
+                </select>
+
+            <p class="parrafo">Color</p>
+            <select name="color">
+                
+                <option value="plata">plata</option>
+                <option value="dorado">dorado</option>
+                <option value="rosa">rosa</option>
+                <option value="azul">azul</option>
+                <option value="verde">verde</option>
+                <option value="morado">morado</option>
+                <option value="negro">negro</option>
+                <option value="blanco">blanco</option>
+                <option value="rojo">rojo</option>
+                
+                </select>
+
+            <p class="parrafo">Precio</p>
+            <input type="text" placeholder="Precio" name="precio">
+
+            <p>Elige el distribuidor</p>
+            <select name="distribuidor">
+
+                <option value="1">sensacional</option>
+                
+                <option value="2">balloons</option>
+                
+                <option value="3">serpentex</option>
+                
+                </select>
+
+            <p>Imagen</p>
+            <input type="file" name="archivo" id="archivo">
+            <br>
+            
+            <br>
+            <input type="submit" name="insertarCM" value="Agregar cortina metalica">
+        </form>
+  
+        </article>
+        <br>
+    
+    <footer>
+        <section>
+            <a href="#titulo">Ir a inicio</a>
+            <br>
+            <a href="mailto:montserrat@gmail.com">montserrat@gmail.com</a>
+          </section>
+            <p>Todos los derechos reservados</p>
+            <p>Alejandra Montserrat Huato Medina</p>
+            <a href="tel:+523335057716">¡Llamanos!</a>
+    </footer>
+</body>
+</html>

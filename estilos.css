@@ -1,0 +1,173 @@
+
+.fuente {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.tam {
+    font-size: 30px;
+}
+
+.estiloParrafo{
+
+    font-weight: 200;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+#estilosTexto {
+
+    line-height: 4;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-indent: 15%;
+    letter-spacing: 7px;
+    word-spacing: 7px;
+
+}
+
+#barra {
+
+    border-style: solid;
+    background-color: white;
+    border-color: orange;
+    border-width: 8px 25px 8px 25px;
+
+    border-top-color: orangered;
+    border-right-color: olive;
+    border-bottom-color: orange;
+    border-left-color: burlywood;
+
+    border: 16px, orangered, solid;
+
+    padding: 30px 15px 30px 15px;
+
+}
+
+
+#barra1{
+
+    
+    border-style: solid;
+    background-color: white;
+    border-color: orange;
+    border-width: 8px 25px 8px 25px;
+
+    border-top-color: orangered;
+    border-right-color: olive;
+    border-bottom-color: orange;
+    border-left-color: burlywood;
+
+    border: 16px, orangered, solid;
+
+    padding: 30px 15px 30px 15px;
+
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+ul {
+    list-style-type: lower-roman;
+    list-style-position: outside;
+    list-style-image: url(acerca.jpg) ; 
+}
+
+#fondo {
+
+    background-color: olive;
+   
+}
+
+
+body {
+
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#bordesCajas1{
+    border-style: solid;
+    background-color: white;
+    border-color: orange;
+}
+
+#bordesCajas{
+    margin-top: 10px;
+    border-style: solid;
+    background-color: white;
+    border-color: orange;
+
+    width: 700px;
+    height: 400px;
+
+    max-width: 600px;
+    min-width: 300px;
+
+    max-height: 500px;
+    min-height: 200px;
+
+    display: inline-block;
+    visibility: visible;
+
+    overflow: scroll;
+
+}
+
+#estiloImg {
+    position: relative;
+    top: 60px;
+    right: 80px;
+    bottom: 90px;
+    left: 68px;
+    
+    float: right;
+}
+
+.tablas {
+    border: 1rem solid saddlebrown;
+    border-collapse: separate;
+    border-spacing: 1rem;
+    caption-side: top;
+    empty-cells: show;
+}
+
+#figura1{
+    height: 10rem;
+    width: 10rem;
+    background-color: olivedrab;
+    position: relative;
+    left: 3rem;
+    margin-bottom: 3rem;
+}
+
+#figura {
+    height: 10rem;
+    width: 10rem;
+    background-color: olivedrab;
+    position: relative;
+    cursor: pointer;
+    left: 3rem;
+    outline: 1rem black groove;
+    content: url(globomet.jpg);
+}
+
+.counter {
+    counter-reset: x;
+}
+
+.counter h2 {
+    counter-reset: y;
+}
+
+.counter h2::before {
+    counter-increment: x;
+    content: "Tema" counter(x) " : ";
+}
+
+.counter h3 ::before {
+    counter-increment: y;
+    content: counter(x) " . " counter(y) "";
+}

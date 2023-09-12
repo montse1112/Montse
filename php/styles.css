@@ -1,0 +1,520 @@
+
+body {
+    background-color: white;
+}
+
+h1 {  
+    color: white;
+    text-shadow: 0.12rem 0.2rem 0.2rem black;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*ESTILOS PARA LA BARRA DE MENU ---------------------*/
+.barra {
+
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
+    border-radius: 0.2rem;
+    border: 0.16rem;
+    border-color: orange;
+    border-style: solid;
+    text-align: center;
+    font-size: 0.88rem;
+    list-style-type: none;
+    text-shadow: 0.12rem;
+    margin-bottom: 10x;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    margin-left: 0.28rem;
+}
+
+li a:hover {
+
+    color: orange;
+}
+
+li {
+    display: inline;
+}
+
+/*ESTILOS PARA LOS SUBTITULOS CON H2 ----------------*/
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: orange;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+/*ESTILOS PARA CONTENEDOR EN FORMA DE CARTA ------*/
+.card1{
+    margin-bottom: 0.6rem;
+    padding-top: 0.4rem;
+    /* padding: 10px 10px; */
+    text-align: center;
+    padding-bottom: 0.4rem;
+}
+
+/*ESTILOS PARA PARRAFOS SECCION UBICACION-------------*/
+
+#parrafoUbicacion {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mapa{
+text-align:center;
+}
+
+.contenedorMapa {
+width: 21rem;
+margin: auto;
+}
+
+.imag {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*ESTILOS PARA ACOMODOS DE OBJETOS----------*/
+.left {
+    float: left;
+    width: 10.8rem;
+    height: 10.8rem;
+    margin-right: 0.4rem;
+}
+
+.right{
+    float: right;
+    width: 10.8rem;
+    height: 10.8rem;
+}
+
+.centrado {
+    float: center;
+}
+.left1 {
+    float: left;
+    width: 10.8rem;
+    height: 210.8rem;
+}
+
+.right1 {
+    float: right;
+}
+
+/*ESTILOS PARA EL AREA DE CABECERA ---------------*/
+header{
+    background-color: orange;
+    padding: 1.9rem 3rem;
+    font-size: 1.2rem;
+    text-align: center;
+    /* background-image: url(img/banner2.jpg);  */
+    background-size: auto;
+    background-position: center;
+}
+
+/*ESTILOS PARA EL FOOTER-----------------*/
+footer {
+    background-color: orange;
+    padding: 1.7rem;
+    color: white;
+}
+
+footer section {
+    float: right;
+   }
+   
+   footer p {
+       margin: 0;
+       font-size: 0.72rem;
+       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+   
+   footer a {
+       transition: color 0.3s ease;
+       color: white;
+       text-decoration: none;
+       font-size: 0.72rem;
+       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+   
+   footer a:hover {
+       color: cornflowerblue;
+   }
+
+   /*ESTILOS PARA TITULOS ---------------------*/
+.t1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-left: 0.4rem;
+}
+.t2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #f44336;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+}
+
+.section1 {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+
+/*ESTILO DE CONTENEDOR DE SECCION INICIO----------*/
+.container {
+    width: 80%;
+    margin: 0.4rem auto;
+} 
+
+section article {
+   /* transition: box-shadow 0.3s ease;
+    background-color: #efefef;*/
+    margin: 1rem 1rem;
+    border-radius: 0.8rem;
+    padding: 1rem 1rem;
+    cursor: pointer;
+}
+
+button {
+
+  background-color: #4CAF50; 
+  width: 6rem;
+  height: 2.8rem;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.64rem;
+ /* transition: width 1s;*/
+
+}
+
+button:hover {
+    background-color: olivedrab;
+}
+
+/*ESTILOS PARA CONTENEDORES DE PRODUCTOS ----------------*/
+.containerP {
+    width: 10.9rem;
+    margin: 0.2rem auto;
+    display: inline-block;
+    margin: 0.2rem 0.5rem 0.2rem 0.5rem;
+}
+
+.buttonP {
+
+  background-color: #4CAF50;
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 2rem;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.6rem;
+  /*transition: width 1s;*/
+}
+
+/*.buttonP:hover {
+   /* width: 6rem;
+}
+*/
+
+/*ESTILOS PARA LAS TAJETAS DE PRODUCTOS -----------------------*/
+.post {
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+    transition: all 0.25s;
+    background-color: #efefef;
+    margin: 0.8rem auto;
+    border-radius: 0.5 rem;
+    padding: 0.25rem 0;
+    cursor: pointer;
+}
+
+.card {
+    /*width: 18.75rem;*/
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    margin:0.8rem auto;
+    padding: 0.25rem 0;
+  }
+  
+  .card img {
+    width: 80%;
+    border-radius: 5px;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    line-height: 0.5;
+  }
+  
+  .card .price {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #f60;
+  }
+  
+  .botonC{
+    background-color: #f60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .botonC:hover {
+    background-color: #f90;
+  }
+
+  .card button {
+    background-color: #f60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card button:hover {
+    
+  }
+  
+
+/*.post:hover {
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,30);
+    transform: translateY(-15px);
+}
+
+
+/*ESTILOS PARA PARRAFOS-----------*/
+p {
+    font-size: 0.9rem;
+}
+
+.parrafo {
+    margin-left: 0.4rem;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.margenParrafo {
+    margin-top: 0;
+}
+
+/*ALINEACIONES DE TEXTOS -------------*/
+.justify {
+    text-align: justify;
+    margin-right: 0.4rem;
+}
+
+.center {
+    text-align: center;
+    display: inline-block;
+}
+   
+/* Colores para letras --------------------------------------------------- */
+.blancoP {
+    color: white;
+}
+
+.negroP {
+    color: black;
+}
+
+.azulP {
+
+    color: rgba(0, 63, 180, 0.87);
+}
+.rojoP {
+    color: #f44336;
+}
+
+.verdeP {
+    color: #4CAF50;
+}
+
+/*colores para fondos --------------------------------------------------------*/
+
+.rojoF {
+    background-color: #f44336;
+}
+
+.azulF {
+    background-color:  #005DC1;
+}
+
+#fondoblanco {
+    background-color: white;
+}
+
+
+/*ESTILOS PARA IMAGENES -------------------*/
+
+#margen {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+}
+
+.imagenMargen {
+    line-height: 0;
+}
+
+
+/* ESTILOS PARA CAJA DE REGISTRO ------------------------*/ 
+
+.boxRegistro {
+
+    margin: 1rem 1rem;
+    text-align: center;
+    width: 40%;
+    height: 40%;
+    background-color: #efefef;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+.links {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.links:hover {
+    color: #f44336;
+}
+
+/*ESTILOS PARA CAJA DE LOGIN -----------------*/
+.boxLogin {
+
+    margin: 1rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    width: 40%;
+    height: 40%;
+    background-color: #efefef;
+    margin: 0 auto;
+}
+
+.contenedor {
+
+    width: 100%;
+}
+
+
+/*ESTILOS PARA SECCION PRODUCTOS GLOBOS*/
+
+.postG{
+    width: 8rem;
+    background-color: #efefef;
+    margin: 0.8rem auto;
+    margin-left: 0.3rem;
+    border-radius: 0.5 rem;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f90;
+    color: #fff;
+  }
+  
+  .carrito {
+    position: relative;
+  }
+  
+  .carrito a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .carrito span {
+    margin-left: 10px;
+  }
+  
+  .carrito i {
+    font-size: 24px;
+  }
+
+
+  /* Hover y estado activo del botón */
+a:hover {
+    color: #f60;
+  }
+  
+/*Medidas de elemento raiz de html ---------------*/
+
+/*pantallas grandes */
+
+@media (max-width: 1600px) {
+    html {
+      font-size: 21px;
+    }
+  }
+  
+ /*tabletas*/
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 18px;
+    }
+  }
+  
+  /*celulares*/
+  
+  @media (max-width: 450px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  /*estilos para tablas*/
+
+  table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+
+    border: solid 1px #eee;
+    padding: 5px;
+}
+
+th {
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}

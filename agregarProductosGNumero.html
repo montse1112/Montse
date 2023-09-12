@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="styles.css">
+    <title>Agregar Globos Numero</title>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Gobos DecoH</h1>
+    </header>
+
+    <nav class="barra">
+        <ul>
+            <center><li><a href="inicioAdm.html">Inicio</a></li></center>
+        </ul>
+    </nav>
+
+    <br>
+        
+    <article class="boxRegistro">
+        <form action="php/agregarGN.php" method="POST" class="formulario_CM" enctype="multipart/form-data">
+    
+            <br>
+            <p class="t2 azulP">Agregar nuevo globo de numero</p>
+            <p class="parrafo">Marca</p>
+            <select name="marca">
+
+                <option value="sensacional">sensacional</option>
+                
+                <option value="balloons">balloons</option>
+                
+                <option value="serpentex">serpentex</option>
+                
+                </select>
+
+            <p class="parrafo">Color</p>
+            <select name="color">
+                
+                <option value="plata">plata</option>
+                <option value="dorado">dorado</option>
+                <option value="rosa">rosa</option>
+                <option value="azul">azul</option>
+                <option value="rojo">rojo</option>
+                
+                </select>
+
+                <p class="parrafo">Numero</p>
+                <select name="numero">
+                <option value="0">0</option>
+                <option value="1">1</option> 
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>              
+                </select>
+                
+                <p class="parrafo">Pulgadas</p>
+                <select name="pulgadas">
+                <option value="9">32 pulgadas</option>
+                <option value="12">40 pulgadas</option>
+                </select>
+
+
+            <p class="parrafo">Precio</p>
+            <input type="text" placeholder="Precio" name="precio">
+
+            <p>Elige el distribuidor</p>
+            <select name="distribuidor">
+
+                <option value="1">sensacional</option>
+                
+                <option value="2">balloons</option>
+                
+                <option value="3">serpentex</option>
+                
+                </select>
+
+            <p>Imagen</p>
+            <input type="file" name="archivo" id="archivo">
+            <br>
+            
+            <br>
+            <input type="submit" name="agregarGN" value="Agregar globo numero">
+        </form>
+  
+        </article>
+        <br>
+    
+    <footer>
+        <section>
+            <a href="#titulo">Ir a inicio</a>
+            <br>
+            <a href="mailto:montserrat@gmail.com">montserrat@gmail.com</a>
+          </section>
+            <p>Todos los derechos reservados</p>
+            <p>Alejandra Montserrat Huato Medina</p>
+            <a href="tel:+523335057716">¡Llamanos!</a>
+    </footer>
+</body>
+</html>

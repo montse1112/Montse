@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="styles.css">
+    <title>Editar Usuarios</title>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Gobos DecoH</h1>
+    </header>
+
+    <nav class="barra">
+        <ul>
+            <center><li><a href="inicioAdm.html">Inicio</a></li></center>
+        </ul>
+    </nav>
+
+    <br>
+        
+    <article class="boxRegistro">
+        <form action="php_login/insertar.php" method="POST" class="formulario_login">
+    
+            <br>
+            <p class="t2 azulP">Buscar usuario por ID</p>
+            <p class="parrafo">ID</p>
+            <input type="text" placeholder="ID" name="id">
+    
+            <br>
+            <br>
+            <input type="submit" name="buscar" value="Buscar usuario">
+        </form>
+  
+        </article>
+        <br>
+
+        <table>
+            <tr>
+               <th>Nombre</th>
+               <th>Correo</th>
+               <th>Telefono</th>
+               <th>Edad</th>
+               <th>Genero</th>
+               <th>Ciudad</th>
+            </tr>
+   
+            <tr>
+               <td><input type="text" placeholder="Nombre" name="nombre"></td>
+               <td><input type="text" placeholder="Correo electronico" name="correo"></td>
+               <td><input type="tel" placeholder="Telefono" name="telefono"></td>
+               <td><input type="text" placeholder="Edad" name="edad"></td>
+               <td> <input type="radio" placeholder="Genero" name="genero" value="mujer" class="parrafo"> Mujer
+                <input type="radio" placeholder="Genero" name="genero" value="hombre" class="parrafo"> Hombre</td>
+                <td><input type="text" placeholder="Ciudad" required name="ciudad"></td>
+            </tr>
+       </table>
+
+       <br>
+
+       <center><input type="submit" name="actualizar" value="Actualizar usuario"></center>
+       <br>
+    
+    <footer>
+        <section>
+            <a href="#titulo">Ir a inicio</a>
+            <br>
+            <a href="mailto:montserrat@gmail.com">montserrat@gmail.com</a>
+          </section>
+            <p>Todos los derechos reservados</p>
+            <p>Alejandra Montserrat Huato Medina</p>
+            <a href="tel:+523335057716">¡Llamanos!</a>
+    </footer>
+</body>
+</html>

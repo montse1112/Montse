@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="styles.css">
+    <title>Agregar Usuarios</title>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Gobos DecoH</h1>
+    </header>
+
+    <nav class="barra">
+        <ul>
+            <center><li><a href="inicioAdm.html">Inicio</a></li></center>
+        </ul>
+    </nav>
+
+    <br>
+        
+    <article class="boxRegistro">
+        <form action="php/agregarU.php" method="POST" class="formulario_login">
+    
+            <br>
+            <p class="t2 azulP">Agregar nuevo usuario</p>
+            <p class="parrafo">Nombre</p>
+            <input type="text" placeholder="Nombre" name="nombre">
+    
+            <p class="parrafo">Correo</p>
+            <input type="email" placeholder="Correo electronico" name="correo">
+
+            <p class="parrafo">Telefono</p>
+            <input type="tel" placeholder="Telefono" name="telefono">
+
+            <p class="parrafo">Edad</p>
+            <input type="text" placeholder="Edad" name="edad">
+
+            <p class="parrafo">Genero</p>
+            <input type="radio" placeholder="Genero" name="genero" value="mujer" class="parrafo"> Mujer
+            <input type="radio" placeholder="Genero" name="genero" value="hombre" class="parrafo"> Hombre
+
+            <p class="parrafo">Ciudad</p>
+            <input type="text" placeholder="Ciudad" required name="ciudad">
+
+            <p class="parrafo">Contrasena</p>
+            <input type="password" placeholder="Contrasena" name="contrasena">
+
+            <br>
+            <br>
+            <input type="submit" name="agregarU" value="Agregar">
+        </form>
+  
+        </article>
+        <br>
+    
+    <footer>
+        <section>
+            <a href="#titulo">Ir a inicio</a>
+            <br>
+            <a href="mailto:montserrat@gmail.com">montserrat@gmail.com</a>
+          </section>
+            <p>Todos los derechos reservados</p>
+            <p>Alejandra Montserrat Huato Medina</p>
+            <a href="tel:+523335057716">¡Llamanos!</a>
+    </footer>
+</body>
+</html>

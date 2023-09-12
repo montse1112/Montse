@@ -1,0 +1,48 @@
+<?php
+
+include ("conexion.php");
+$getmysql = new mysqlconex();
+
+$getconex = $getmysql -> conex();
+
+if(isset ($_POST["eliminarCM"])){
+
+
+    $id=$_POST["id"];
+
+
+       $query1=mysqli_query($getconex, "SELECT id FROM cortinas_metalicas WHERE id ='".$id."' ");
+       $nr=mysqli_num_rows($query1);    
+   
+       if($nr==1){ 
+   
+           while ( $row = $query1->fetch_assoc() ) {
+   
+            $id=$row['id'];
+   
+           $query = "DELETE FROM cortinas_metalicas WHERE id = ? ";
+           $sentencia= mysqli_prepare($getconex, $query);
+           mysqli_stmt_bind_param($sentencia, "i", $id);
+           mysqli_stmt_execute($sentencia);
+
+   
+           $afectado=mysqli_stmt_affected_rows($sentencia);
+   
+       if($afectado==1){
+           echo "<script> alert ('La cortina metalica se ha eliminado correctamente'); location.href='editarCM.php'; </script>";
+   
+       }else{
+           echo "<script> alert ('La metalica no se ha eliminado correctamente'); location.href='editarCM.php'; </script>"; 
+       }
+   
+       mysqli_stmt_close($sentencia);
+       mysqli_close($getconex);
+   }
+       }
+
+    }else {
+
+         
+       
+    }
+ 

@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.carrito {
+  position: relative;
+}
+
+.carrito a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.carrito span {
+  margin-left: 10px;
+}
+
+.carrito i {
+  font-size: 24px;
+}
+
+
+
+/* Hover y estado activo del botón */
+.carrito:hover:before, .carrito:focus:before {
+  background-color: #333;
+  color: #fff;
+}

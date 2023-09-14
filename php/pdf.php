@@ -1,12 +1,16 @@
 <?php
 session_start();
 
+
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+require "../vendor/autoload.php";
+require('../fpdf185/fpdf.php');
+require('../PHPMailer/src/PHPMailer.php');
+require('../PHPMailer/src/SMTP.php');
+require('../PHPMailer/src/Exception.php');
 
 //Load Composer's autoloader
 //require 'vendor/autoload.php';
@@ -23,11 +27,18 @@ $nombreU =$_SESSION['nombre_usuario'];
 $fecha=date("d-m-Y");
 
 
+
+$query=mysqli_query($getconex, "SELECT * FROM detalles_ventasg WHERE id_venta='".$id_venta."'");
+$resultado_carrito=mysqli_num_rows($query);
+//$resultado_carrito = $con->query($query);
+
+
 function fetch_customer_data($getconex, $id_venta){
 
     $query = "SELECT * FROM detalles_ventasg WHERE id_venta='".$id_venta."'";
-    $stmt = $getconex->prepare($query);
-    $stmt->execute();
+    //$resultado_carrito = $con->query($query);
+   $stmt = $getconex->prepare($query);
+   $stmt->execute();
     
     $resultSet = $stmt->get_result();
     $data = $resultSet->fetch_all(MYSQLI_ASSOC);
@@ -103,10 +114,86 @@ function fetch_customer_data($getconex, $id_venta){
     return $output;
 }
 
+    
+        
+    // Crear un nuevo objeto FPDF
+    $pdf = new FPDF();
+
+    // Agregar una nueva página al PDF
+    $pdf->AddPage();
+
+    // Generar el contenido del PDF
+    $pdf->SetFont('Arial', 'B', 18);
+    $pdf->Cell(0, 10, 'Este mensaje ha sido enviado por Decoh', 0, 1);
+    $pdf->Ln(10); // Cambio de ln a Ln
+    $pdf->SetFont('Arial', 'B', 14);
+    $pdf->Cell(0, 10, 'Usuario: ' . $nombreU, 0, 1); // Cambio de $datos_usuario['nombre'] a $nombre
+    $pdf->Cell(0, 10, 'Correo: ' . $correoU, 0, 1); // Cambio de $datos_usuario['telefono'] a $telefono
+    $fecha = date('l jS \of F Y h:i:s A');
+    $pdf->Cell(0, 10, 'Fecha: ' . $fecha, 0, 1);
+    $pdf->Cell(0, 10, 'Datos de compra:', 0, 1);
+
+    $total=0;
+    
+    if ($resultado_carrito==1) {
+        while ($fila_carrito = mysqli_fetch_assoc($query)) {
+            // Obtener los datos específicos del carrito
+            $venta = $fila_carrito['id_venta'];
+            // Otros campos del carrito
+            $id_producto = $fila_carrito['id_producto'];
+            $precio = $fila_carrito['precio'];
+            $cantidad = $fila_carrito['cantidad'];
+            
+            $total=$total+$precio;
+
+            // Agregar los datos del carrito al PDF
+            $pdf->Cell(0, 10, "\nId venta: $venta", 0, 1);
+            $pdf->Cell(0, 10, "\nId producto: $id_producto", 0, 1);
+            $pdf->Cell(0, 10, "\nPrecio: $precio", 0, 1);
+            $pdf->Cell(0, 10, "\nCantidad de bolsas: $cantidad", 0, 1);
+            $pdf->Cell(0, 10, 'Total: $' . $total, 0, 1); 
+            
+        }
+    }
+    
+    
+
+        
+  // Guardar el PDF en el servidor
+$pdfPath = '../pdf/orden'.$nombreU.'.pdf';
+$pdf->Output($pdfPath, 'F');
+
 $message=" ";
 if(isset($_POST['action'])){
 
-    include('pdf_generar.php');
+    
+    // Definir los encabezados del correo electrónico
+    $mail = new PHPMailer();
+	$mail->CharSet = 'utf-8';
+	$mail->Host = "smtp.gmail.com";
+	$mail->From = "decohglobos@gmail.com";
+	$mail->IsSMTP();
+	$mail->SMTPAuth = true;
+	$mail->Username = "decohglobos@gmail.com";
+	$mail->Password = "jezsnhpirvbjxsle";
+	$mail->Port = 587;
+	$mail->AddAddress($correoU);
+	$mail->SMTPDebug = 0;   //Muestra las trazas del mail, 0 para ocultarla
+	$mail->isHTML(true);                                  // Set email format to HTML
+	$mail->Subject = 'Gracias por la Compra!';
+	$mail->Body = '<b>Este es el recibo de tu compra:)</b>';
+	$mail->AltBody = 'Hemos enviado el recibo';
+
+	$inMailFileName = "recibo.pdf";
+	$filePath = "../pdf/orden" .$nombreU.".pdf" ;
+	$mail->AddAttachment($filePath, $inMailFileName);
+
+	if($mail-> Send()){
+        $message= "<script> alert ('El PDF se ha enviado con exito, revisa tu correo'); location.href='carritoGL.php'; </script>";
+    }
+}
+
+   /* include('pdf_generar.php');
     $file_name =md5(rand()) . '.pdf';
 
     $html_code='<style> 
@@ -174,9 +261,9 @@ if(isset($_POST['action'])){
         $message= "<script> alert ('El PDF se ha enviado con exito, revisa tu correo'); location.href='carritoGL.php'; </script>";
     }
 
-    unlink($file_name);
+    unlink($file_name);*/
 
-}
+
 
 ?>
 
